@@ -39,6 +39,9 @@ The Bandgap Reference (BGR) is a circuit which provides a stable voltage output 
   - [1.1 Tools Setup](#1.1-Tools-setup)
   - [1.2 PDK Setup](#1.2-PDK-setup)
 - [2. BGR introduction](#2-BGR-introduction)
+  - [2.1 BGR Principle](#2.1-BGR-Principle)
+  - [2.2 Types of BGR](#2.2-Types-of-BGR)
+  - [2.3 Self-biased Current Mirror based BGR](#2.3-Self-biased-current-mirror-based-bgr)
 - [Schematic Design and Simulation](#Schematic-design-and-simulation)
 - [Layout Design](#Layout-design)
 - [LVS and Post-layout Simulation](#LVS-and-post-layout-simulation)
@@ -154,6 +157,36 @@ From above we can see that the voltage V-V1 is PTAT in nature, but it's slope is
 <p align="center">
   <img src="/Images/PTAT.png">
 </p>
+
+### 2.2 Types of BGR
+Architecture wise BGR can be designed in two ways
+
+- Using Self-biased current mirror  
+- Using Operational-amplifier 
+
+Application wise BGR can be categorized as
+- Low-voltage BGR
+- Low-power BGR
+- High-PSRR and low-noise BGR
+- Curvature compensated BGR
+
+We are going to design our BGR circuit using Self-biased current mirror architecture.
+
+### 2.3 Self-biased current mirror based BGR
+
+Advantages:
+
+- Simplest topology
+- Easy to design 
+- Always stable
+
+Limitations:
+
+- Low power supply rejection ratio (PSRR)
+- Cacode design needed to reduce PSRR
+- Voltage head-room issue
+- Need start-up circuit
+
 
 
 
