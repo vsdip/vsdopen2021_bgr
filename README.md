@@ -35,9 +35,9 @@ The Bandgap Reference (BGR) is a circuit which provides a stable voltage output 
 
 
 ## Contents
-- [1. Tool and PDK Setup](#Tools-and-PDK-setup)
-  - [1.1 Tools Setup](#Tools-setup)
-  - [1.2 PDK Setup](#PDK-setup)
+- [1. Tool and PDK Setup](#1.-Tools-and-PDK-setup)
+  - [1.1 Tools Setup](#1.1-Tools-setup)
+  - [1.2 PDK Setup](#1.2-PDK-setup)
 - [Schematic Design and Simulation](#Schematic-design-and-simulation)
 - [Layout Design](#Layout-design)
 - [LVS and Post-layout Simulation](#LVS-and-post-layout-simulation)
