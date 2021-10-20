@@ -35,9 +35,10 @@ The Bandgap Reference (BGR) is a circuit which provides a stable voltage output 
 
 
 ## Contents
-- [1. Tool and PDK Setup](#1.-Tools-and-PDK-setup)
+- [1. Tool and PDK Setup](#1-Tools-and-PDK-setup)
   - [1.1 Tools Setup](#1.1-Tools-setup)
   - [1.2 PDK Setup](#1.2-PDK-setup)
+- [2. BGR introduction](#2-BGR-introduction)
 - [Schematic Design and Simulation](#Schematic-design-and-simulation)
 - [Layout Design](#Layout-design)
 - [LVS and Post-layout Simulation](#LVS-and-post-layout-simulation)
@@ -45,7 +46,7 @@ The Bandgap Reference (BGR) is a circuit which provides a stable voltage output 
 
 ## 1. Tools and PDK setup
 
-### 1.1 Tools Setup
+### 1.1 Tools setup
 For the design and simulation of the BGR circuit we will need the following tools.
 - Spice netlist simulation - [Ngspice]
 - Layout Design and DRC - [Magic]
@@ -91,7 +92,7 @@ $  ./configure
 $  sudo make
 $  sudo make install 
 ```
-### 1.2 PDK Setup
+### 1.2 PDK setup
 
 A process design kit (PDK) is a set of files used within the semiconductor industry to model a fabrication process for the design tools used to design an integrated circuit. The PDK is created by the foundry defining a certain technology variation for their processes. It is then passed to their customers to use in the design process.
 
@@ -107,7 +108,21 @@ $  make
 $  [sudo] make install
 ```
 
+## 2. BGR Introduction
 
+### 2.1 BGR Principle
+The operation principle of BGR circuits is to sum a voltage with negative temprature coefficient with another one exhibiting opposite temperature dependancies. Generally semiconductor diode behave as CTAT i.e. Complement to absolute temp. which mean with increase in temp. the voltage across the diode will decrease. So we need to find a PTAT circuit which can cancel out the CTAT nature i.e. with rise in temp. the voltage across that device will increase and thus we can get a constant voltage reference with respect to temp.
+<p align="center">
+  <img width="500" height="300" src="/Images/BGR_Principle.png">
+</p>
+
+#### 2.1.1 CTAT Voltage Generation
+Usually semiconductor diodes shows CTAT behaviour. If we consider constant current is flowing through a forwrard biased diode, then with increase in temp. we can observe that the voltage across the diode is decreaseing. Generally, it is found that the slope of the V~Temp is -2mV/deg Centigarde.
+<p align="center">
+  <img width="500" height="300" src="/Images/CTAT.png">
+</p>
+
+#### 2.1.2 PTAT Voltage Generation
 
 [Magic]:                http://opencircuitdesign.com/magic/
 [Ngspice]:              http://ngspice.sourceforge.net
