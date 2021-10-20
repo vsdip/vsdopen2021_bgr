@@ -52,7 +52,7 @@ For the design and simulation of the BGR circuit we will need the following tool
 - Layout Design and DRC - [Magic]
 - LVS - [Netgen]
 
-### 1.1.1 Ngspice 
+#### 1.1.1 Ngspice 
 ![image](https://user-images.githubusercontent.com/49194847/138070431-d95ce371-db3b-43a1-8dbe-fa85bff53625.png)
 
 [Ngspice](http://ngspice.sourceforge.net/devel.html) is the open source spice simulator for electric and electronic circuits. Ngspice is an open project, there is no closed group of developers.
@@ -64,7 +64,7 @@ Open the terminal and type the following to install Ngspice
 ```
 $  sudo apt-get install ngspice
 ```
-### 1.1.2 Magic
+#### 1.1.2 Magic
 ![image](https://user-images.githubusercontent.com/49194847/138071384-a2c83ba4-3f9c-431a-98da-72dc2bba38e7.png)
 
  [Magic](http://opencircuitdesign.com/magic/) is a VLSI layout tool.
@@ -79,7 +79,7 @@ $  ./configure
 $  sudo make
 $  sudo make install
 ```
-### 1.1.3 Netgen
+#### 1.1.3 Netgen
 ![image](https://user-images.githubusercontent.com/49194847/138073573-a819cc67-7643-4ecf-983d-454d99ec5443.png)
 
 [Netgen] is a tool for comparing netlists, a process known as LVS, which stands for "Layout vs. Schematic". This is an important step in the integrated circuit design flow, ensuring that the geometry that has been laid out matches the expected circuit.
@@ -111,7 +111,7 @@ $  [sudo] make install
 ## 2. BGR Introduction
 
 ### 2.1 BGR Principle
-The operation principle of BGR circuits is to sum a voltage with negative temprature coefficient with another one exhibiting opposite temperature dependancies. Generally semiconductor diode behave as CTAT i.e. Complement to absolute temp. which mean with increase in temp. the voltage across the diode will decrease. So we need to find a PTAT circuit which can cancel out the CTAT nature i.e. with rise in temp. the voltage across that device will increase and thus we can get a constant voltage reference with respect to temp.
+The operation principle of BGR circuits is to sum a voltage with negative temprature coefficient with another one exhibiting opposite temperature dependancies. Generally semiconductor diode behave as CTAT i.e. Complement to absolute temp. which means with increase in temp. the voltage across the diode will decrease. So we need to find a PTAT circuit which can cancel out the CTAT nature i.e. with rise in temp. the voltage across that device will increase and thus we can get a constant voltage reference with respect to temp.
 <p align="center">
   <img width="500" height="300" src="/Images/BGR_Principle.png">
 </p>
@@ -123,7 +123,37 @@ Usually semiconductor diodes shows CTAT behaviour. If we consider constant curre
 </p>
 
 #### 2.1.2 PTAT Voltage Generation
+<p align="center">
+  <img width="300" height="500" src="/Images/Equation.png">
+</p>
 
+From Diode current equation we can find that it has two parts, i.e. 
+
+- Vt (Thermal Voltage) which is directly proportional to the temp. (order ~ 1)
+- Is (Reverse saturation current) which is directly proportional to the temp. (order ~ 2.5), as this Is term is in denominator so with increase in temp. the ln(Io/Is) decreases which is responsible for CTAT nature of the diode.
+
+So to get a PTAT Voltage generation circuit we have to find some way such that we can get the Vt separated from Is.
+
+To get Vt separated from Is we can approach in the following way
+<p align="center">
+  <img src="/Images/PTATCKT.png">
+</p>
+
+In the above circuit same amount of current I is flowing in both the branches. So the node voltage A and B are going to be same V. Now in the B branch if we substract V1 from V, we get Vt independent of Is.
+<p align="center">
+  <img src="/Images/PTATEQN.png">
+</p>
+Now
+
+```
+V= Combined Voltage across R1 and Q2 (CTAT in nature but less sloppy)
+V1= Voltage across Q2 (CTAT in nature but more sloppy)
+V-V1= Voltage across R1 (PTAT in nature)
+```
+From above we can see that the voltage V-V1 is PTAT in nature, but it's slope is very less as compared to the CTAT, so we have to increase the slope. In order to increase the slope we can use multiple BJTs as diode, so that current per individual diode will be less and it the slope of V-V1 will increase.
+<p align="center">
+  <img src="/Images/PTAT.png">
+</p>
 [Magic]:                http://opencircuitdesign.com/magic/
 [Ngspice]:              http://ngspice.sourceforge.net
 [Netgen]:               http://opencircuitdesign.com/netgen/
