@@ -36,9 +36,20 @@ The Bandgap Reference (BGR) is a circuit which provides a stable voltage output 
 
 ## Contents
 - [Tool and PDK Setup](#Tools-and-PDK-setup)
-
-
-
+- [Schematic Design and Simulation](#Schematic-design-and-simulation)
+- [Layout Design](#Layout-design)
+- [LVS and Post-layout Simulation](#LVS-and-post-layout-simulation)
 
 
 ## Tools and PDK setup
+For the design and simulation of the BGR circuit we will need the following tools.
+- Spice netlist simulation - [NgSpice]
+- Layout Design and DRC - [Magic]
+- LVS - [Netgen]
+
+
+
+
+[Magic]:                http://opencircuitdesign.com/magic/
+[NGSpice]:              http://ngspice.sourceforge.net
+[Netgen]:               http://opencircuitdesign.com/netgen/
