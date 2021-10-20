@@ -154,6 +154,12 @@ From above we can see that the voltage V-V1 is PTAT in nature, but it's slope is
 <p align="center">
   <img src="/Images/PTAT.png">
 </p>
+
+
+
+
+
+
 [Magic]:                http://opencircuitdesign.com/magic/
 [Ngspice]:              http://ngspice.sourceforge.net
 [Netgen]:               http://opencircuitdesign.com/netgen/
