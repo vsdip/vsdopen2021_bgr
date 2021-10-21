@@ -42,7 +42,7 @@ The Bandgap Reference (BGR) is a circuit which provides a stable voltage output 
   - [2.1 BGR Principle](#2.1-BGR-Principle)
   - [2.2 Types of BGR](#2.2-Types-of-BGR)
   - [2.3 Self-biased Current Mirror based BGR](#2.3-Self-biased-current-mirror-based-bgr)
-- [Design and Pre-layout Simulation](#Design-and-pre-layout-simulation)
+- [3. Design and Prelayout Simulation](#3-Design-and-prelayout-simulation)
 - [Layout Design](#Layout-design)
 - [LVS and Post-layout Simulation](#LVS-and-post-layout-simulation)
 
