@@ -4,7 +4,7 @@ This github repository is for the design of a Band Gap Reference Circuit (BGR) u
 ## Introduction to BGR
 The Bandgap Reference (BGR) is a circuit which provides a stable voltage output which is independent of factors like temperature, supply voltage. 
 <p align="center">
-  <img width="500" height="300" src="/Images/BGR1.png">
+  <img src="/Images/BGR1.png">
 </p>
 
 
@@ -116,18 +116,18 @@ $  [sudo] make install
 ### 2.1 BGR Principle
 The operation principle of BGR circuits is to sum a voltage with negative temprature coefficient with another one exhibiting opposite temperature dependancies. Generally semiconductor diode behave as CTAT i.e. Complement to absolute temp. which means with increase in temp. the voltage across the diode will decrease. So we need to find a PTAT circuit which can cancel out the CTAT nature i.e. with rise in temp. the voltage across that device will increase and thus we can get a constant voltage reference with respect to temp.
 <p align="center">
-  <img width="500" height="300" src="/Images/BGR_Principle.png">
+  <img src="/Images/BGR_Principle.png">
 </p>
 
 #### 2.1.1 CTAT Voltage Generation
 Usually semiconductor diodes shows CTAT behaviour. If we consider constant current is flowing through a forwrard biased diode, then with increase in temp. we can observe that the voltage across the diode is decreaseing. Generally, it is found that the slope of the V~Temp is -2mV/deg Centigarde.
 <p align="center">
-  <img width="500" height="300" src="/Images/CTAT.png">
+  <img src="/Images/CTAT.png">
 </p>
 
 #### 2.1.2 PTAT Voltage Generation
 <p align="center">
-  <img width="300" height="500" src="/Images/Equation.png">
+  <img src="/Images/Equation.png">
 </p>
 
 From Diode current equation we can find that it has two parts, i.e. 
