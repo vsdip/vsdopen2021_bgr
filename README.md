@@ -230,7 +230,7 @@ Limitations of Self-biased BGR:
 - Voltage head-room issue
 - Need start-up circuit
 
-## 3. Design and Prelayout Simulation
+## 3. Design and Pre-layout Simulation
 For the real-time circuit design we are going to use sky130 technology PDK. Before we design the complete circuit we must know what are our design requirements. The design requirements are the design guidelines which our design must satisfy.
 
 ### 3.1 Design Requirements
