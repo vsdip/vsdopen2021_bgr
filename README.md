@@ -217,13 +217,13 @@ Now by connecting all above components we can get the complete BGR circuit.
 <p align="center">
   <img src="/Images/fullbgr.png">
 </p>
-Advantages of Self-biased BGR:
+Advantages of SBCM BGR:
 
 - Simplest topology
 - Easy to design 
 - Always stable
 
-Limitations of Self-biased BGR:
+Limitations of SBCM BGR:
 
 - Low power supply rejection ratio (PSRR)
 - Cacode design needed to reduce PSRR
