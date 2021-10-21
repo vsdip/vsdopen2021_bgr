@@ -343,6 +343,18 @@ Ixx n1 n2 dc 10u : *Ixx* - Current source, *n1* - Node-1 of current source, *n2*
 
 **CTAT Voltage generation** [netlist](/prelayout/ctat_voltage_gen.sp)
 
+In this simulation we take a BJT as a diode, Provide a Voltage supply of 2V and Current of 10uA and we need to find the volatge variation across the BJT with respect to the temp.
+
+We except to get a negative slope straight line, i.e. CTAT voltage (With rise in temp. the voltage should decrease across the BJT). To lauch the simulation open terminal and write the following commands in the prelayout folder.
+```
+$ ngspice ctat_voltage_gen.sp
+```
+*If it doesn't work, please check your local path
+
+After simulation we can get a wavefrom like below, and from the wavefrom we can see the CTAT behaviour of the BJT, and can find the slope.
+<p align="center">
+  <img src="/Images/prelayout/ctat@2v.PNG">
+</p>
 
 
 
