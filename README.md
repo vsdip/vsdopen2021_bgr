@@ -269,6 +269,59 @@ After thoroughly going through the device data sheet we selected the following d
 | **Bin Width** | 0.35u, 0.69u, 1.41u, 5.37u | 
 | **Model** | sky130_fd_pr__res_high_po |
 
+### 3.3 Circuit Design
+
+**1. Current Calculation**
+
+- Max. power Consumption < 60uW
+- Max Total Current = 60 uW/1.8V=33.33uA
+- So, we have chosen 10uA/branch, (3*10=30uA)
+- Start-up current 1-2 uA
+
+**2. Choosing Number of BJT in parallel in Branch2**
+- Less number of BJT: require less resistance value but matching hampers
+- More number of BJT: requires higher resistance value but gives good matching
+- So a moderate number have chosen (8 BJT) for better layout matching and moderate resistance value.  
+
+**3. Calculation of R1**
+- R1= Vt* ln (8)/I =26 mv *ln(8)/10.7uA=5 KOhm
+- R1 size: W=1.41um, L=7.8um, Unit res value: 2k Ohm
+- Number of resistance needed: 2 in series and 2 in parallel (2+2+(2||2))
+
+**4. Calculation of R2**
+- Current through ref branch:I3=I2=Vt*ln(8)/R1
+- Voltage across R2: R2*I3=R2/R1(Vt*ln(8))
+- Slope of VR2= R2/R1 (ln(8)*115uv)/Deg Cent.
+- Slope of VQ3=-1.6mV/Deg cent
+- Adding both and equating to zero, R2 will be around 33k Ohm
+- Number of resistance needed: 16 in series and 2 in parallel (2+2...+2+ (2||2))
+
+**5. SBCM Design (Self-biased Current Mirror)**
+
+***A. PMOS Design in SBCM***
+- Make both the MP1 and MP2 well in Saturation 
+- To reduce channel length modulation used L=2um
+- Finally the size is **L=2u, W=5u and M=4**
+
+***B. NMOS Design in SBCM***
+- Make both the MN1 and MN2 either in Saturation or in deep sub-threshold
+- We have made it in deep sub-threshold 
+- To reduce channel length modulation used L=1um
+- Finally the size is **L=1u, W=5u and M=8**
+
+#### 3.3.1 Final Circuit
+<p align="center">
+  <img src="/Images/finalbgr.png">
+</p>
+
+
+
+
+
+
+
+
+
 
 
 
