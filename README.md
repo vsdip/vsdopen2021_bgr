@@ -42,7 +42,7 @@ The Bandgap Reference (BGR) is a circuit which provides a stable voltage output 
   - [2.1 BGR Principle](#2.1-BGR-Principle)
   - [2.2 Types of BGR](#2.2-Types-of-BGR)
   - [2.3 Self-biased Current Mirror based BGR](#2.3-Self-biased-current-mirror-based-bgr)
-- [Schematic Design and Simulation](#Schematic-design-and-simulation)
+- [Design and Pre-layout Simulation](#Design-and-pre-layout-simulation)
 - [Layout Design](#Layout-design)
 - [LVS and Post-layout Simulation](#LVS-and-post-layout-simulation)
 
@@ -203,22 +203,63 @@ The Self-biased current mirror is a type of current mirror which requires no ext
 #### 2.3.4 Reference Branch Circuit
 The reference circuit branch performs the addition of CTAT and PTAT volages and gives the final reference voltage. We are using a mirror transitor and a BJT as diode in the reference branch. By virtue of the mirror transistor in the reference branch the same amount of current flows through it as of the current mirror branches. Now from the PTAT circuit branch we are getting PTAT voltage and PTAT current. The same PTAT current is flowing in the reference branch. But the slope of PTAT voltage is much more smaller than that of slope of CTAT voltgae. In order to make increase the voltage slope we have to increase the resistance (current constant, so V increases with increase in R). Now across the high resistance we will get our constant reference voltage which is the result of CTAT Voltage + PTAT Voltage.
 <p align="center">
-  <img src="/Images/refbranch.png">
+  <img src="/Images/refbranch1.png">
 </p>
 
+#### 2.3.5 Start-up circuit
+The start-up circuit is required to move out the self biased current mirror from degenerative bias point (zero current). The start-up circuit forecefully flows a slow amount of current through the self-biased current mirror when the current is 0 in the current mirror branches, as the current mirror is self biased this small current creats a disturbance and the current mirror auto biased to the desired current value.
+<p align="center">
+  <img src="/Images/startup.png">
+</p>
 
-Advantages:
+#### 2.3.6 Complete BGR Circuit
+Now by connecting all above components we can get the complete BGR circuit.
+<p align="center">
+  <img src="/Images/fullbgr.png">
+</p>
+Advantages of Self-biased BGR:
 
 - Simplest topology
 - Easy to design 
 - Always stable
 
-Limitations:
+Limitations of Self-biased BGR:
 
 - Low power supply rejection ratio (PSRR)
 - Cacode design needed to reduce PSRR
 - Voltage head-room issue
 - Need start-up circuit
+
+## 3. Design and Prelayout Simulation
+For the real-time circuit design we are going to use sky130 technology PDK. Before we design the complete circuit we must know what are our design requirements. The design requirements are the design guidelines which our design must satisfy.
+
+### 3.1 Design Requirements
+- Supply voltage = 1.8V
+- Temperature: -40 to 125 Deg Cent.
+- Power Consumption < 60uW
+- Off current < 2uA
+- Start-up time < 2us
+- Tempco. Of Vref < 50 ppm
+
+Now, we have to go through the device data sheet to find the appropriate devices for our design. 
+
+After thoroughly going through the device data sheet we selected the following devices for our design.
+### 3.2 Device Data Sheet
+***1. MOSFET***
+| Parameter | NFET | PFET |
+| :-: | :-: | :-: |
+| **Type** | LVT | LVT |
+| **Voltage** | 1.8V | 1.8V |
+| **Vt0** | ~0.4V | ~-0.6V |
+| **Model** | sky130_fd_pr__nfet_01v8_lvt | sky130_fd_pr__pfet_01v8_lvt |
+
+***2. BJT (PNP)***
+| Parameter | NFET | 
+| :-: | :-: | 
+| **Current Rating** | 1uA-10uA/um2 | 
+| **Beta** | ~12 |
+| **Vt0** | 11.56 um2 | 
+| **Model** | sky130_fd_pr__pnp_05v5_W3p40L3p40 |
 
 
 
