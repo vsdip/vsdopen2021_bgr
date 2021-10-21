@@ -254,12 +254,20 @@ After thoroughly going through the device data sheet we selected the following d
 | **Model** | sky130_fd_pr__nfet_01v8_lvt | sky130_fd_pr__pfet_01v8_lvt |
 
 ***2. BJT (PNP)***
-| Parameter | NFET | 
+| Parameter | PNP | 
 | :-: | :-: | 
 | **Current Rating** | 1uA-10uA/um2 | 
 | **Beta** | ~12 |
 | **Vt0** | 11.56 um2 | 
 | **Model** | sky130_fd_pr__pnp_05v5_W3p40L3p40 |
+
+***3. RESISTOR (RPOLYH)***
+| Parameter | RPOLYH | 
+| :-: | :-: | 
+| **Sheet Resistance** | ~350 Ohm | 
+| **Tempco.** | 2.5 Ohm/Deg Cent |
+| **Bin Width** | 0.35u, 0.69u, 1.41u, 5.37u | 
+| **Model** | sky130_fd_pr__res_high_po |
 
 
 
