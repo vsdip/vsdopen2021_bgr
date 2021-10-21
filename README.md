@@ -314,10 +314,34 @@ After thoroughly going through the device data sheet we selected the following d
   <img src="/Images/finalbgr.png">
 </p>
 
+### 3.4 Writing Spice netlist and Pre-layout simulation
+As we are not using any schematic editor we have to write the spice netlist and simulate it using Ngspice.
 
+**Steps to write a netlist**
+- Create a file with ***.sp*** extension, open with any editor like gvim/vim/nano.
+- The 1st line of the Spice netlist is by default a comment line.
+- To write a valid netlist we must include the library file (with absolute path) and mention the cornmer name (tt, ff or ss). Ex- 
+```
+.lib "/home/<path-to-lib>/sky130.lib.spice" tt
+```
+- Now, if we are using the **sky130_fd_pr__pnp_05v5_W3p40L3p40** model, we have to include the that file also.
+```
+.include "/home/<path-to-model>/sky130_fd_pr__model__pnp.model.spice"
+```
+- Syntax for independent voltage/current source is:
+```
+Vxx n1 n2 dc 1.8 : *Vxx* - Voltage source, *n1* - Node-1 of voltage source, *n2* - Node-2 of voltage source, *dc* - Type (can be dc/ac) *1.8* - value
+Ixx n1 n2 dc 10u : *Ixx* - Current source, *n1* - Node-1 of current source, *n2* - Node-2 of current source, *dc* - Type (can be dc/ac) *1.8* - value
+```
+- Syntax for DC simulation
+```
+.dc temp -40 125 5 : Simulate for temp varying from -40 to 125 with 5 dec cent step
+.dc Vs1 0 1.8 0.01 : Simulate for Vs1 varying from 0V to 1.8V with 0.01V step
+```
 
+#### 3.4.1 CTAT Simulation
 
-
+**CTAT Voltage generation** [netlist](/prelayout/ctat_voltage_gen.sp)
 
 
 
