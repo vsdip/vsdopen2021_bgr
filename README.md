@@ -174,6 +174,30 @@ We are going to design our BGR circuit using Self-biased current mirror architec
 
 ### 2.3 Self-biased current mirror based BGR
 
+The Self-biased current mirror based constitute of the following components.
+
+- CTAT voltage generation circuit
+- PTAT voltage generation circuit
+- Self-biased current mirror circuit
+- Reference branch circuit
+- Start-up circuit
+
+#### 2.3.1 CTAT Voltage generation circuit
+The CTAT Voltage generation circuit consist of a BJT connected as a diode, which shows CTAT nature as explained above.
+<p align="center">
+  <img src="/Images/CTAT1.png">
+</p>
+
+#### 2.3.2 PTAT Voltage generation circuit
+The PTAT Voltgae generation circuit consist of **N** BJTs connected with a series resistance. The operation principle is explained above.
+<p align="center">
+  <img src="/Images/PTAT1.png">
+</p>
+
+#### 2.3.3 Self-Biased Current Mirror Circuit
+
+
+
 Advantages:
 
 - Simplest topology
