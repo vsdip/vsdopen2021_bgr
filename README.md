@@ -195,7 +195,16 @@ The PTAT Voltgae generation circuit consist of **N** BJTs connected with a serie
 </p>
 
 #### 2.3.3 Self-Biased Current Mirror Circuit
+The Self-biased current mirror is a type of current mirror which requires no external biasing. This current mirrors biases it self to the desired current value without any external current source reference. 
+<p align="center">
+  <img src="/Images/currentmirror.png">
+</p>
 
+#### 2.3.4 Reference Branch Circuit
+The reference circuit branch performs the addition of CTAT and PTAT volages and gives the final reference voltage. We are using a mirror transitor and a BJT as diode in the reference branch. By virtue of the mirror transistor in the reference branch the same amount of current flows through it as of the current mirror branches. Now from the PTAT circuit branch we are getting PTAT voltage and PTAT current. The same PTAT current is flowing in the reference branch. But the slope of PTAT voltage is much more smaller than that of slope of CTAT voltgae. In order to make increase the voltage slope we have to increase the resistance (current constant, so V increases with increase in R). Now across the high resistance we will get our constant reference voltage which is the result of CTAT Voltage + PTAT Voltage.
+<p align="center">
+  <img src="/Images/refbranch.png">
+</p>
 
 
 Advantages:
