@@ -1,4 +1,4 @@
-**** ctat voltage generation circuit *****
+**** ptat voltage generation circuit *****
 
 .lib "/home/srath22/cad/eda-technology/sky130/models/spice/models/sky130.lib.spice tt"
 .include "/home/srath22/cad/eda-technology/sky130/models/spice/models/sky130_fd_pr__model__pnp.model.spice"
