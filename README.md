@@ -393,6 +393,27 @@ In this simulation we will check the amplified PTAT voltage using one VCVS.
 </p>
 
 
+#### 3.4.3 Resistance tempco.
+
+We know that resistor also behaves as PTAT, i.e the voltage across the resistor also increases with increase in the temp. In our BGR the PTAT voltage we are getting is not only by the virtue of Vt(Thermal voltgae) but with the additional PTAT voltage of the resistance.
+
+In this simulation we will check the tempco. of resistor using ideal current source of 10uA. [netlist](/prelayout/res_tempco.sp)
+<p align="center">
+  <img src="Images/prelayout/res_tempco_v.png">
+</p>
+
+From the above curve we can find that the Voltage across the resistnace is increasing with increase in temp., i.e. the PTAT nature.
+
+Now to find the temco. we have to find the change in resistance w.r.t temp. The tempco. can be found from the slope of the following curve.
+<p align="center">
+  <img src="Images/prelayout/res_tempco.png">
+</p>
+
+Also we can find the PTAT voltages across the resistance for different current values from the following curve. [netlist](prelayout/res_tempco_var_current.sp)
+<p align="center">
+  <img src="Images/prelayout/res_tempco_var_i.png">
+</p>
+
 [Magic]:                http://opencircuitdesign.com/magic/
 [Ngspice]:              http://ngspice.sourceforge.net
 [Netgen]:               http://opencircuitdesign.com/netgen/
