@@ -1,5 +1,5 @@
 # BGR_sky130
-This github repository is for the design of a Band Gap Reference Circuit (BGR) using Google-skywater130 PDK.
+This github repository is for the design of a Band Gap Reference Circuit (BGR) using Google-skywater130nm technology PDK.
 
 ## Introduction to BGR
 The Bandgap Reference (BGR) is a circuit which provides a stable voltage output which is independent of factors like temperature, supply voltage. 
