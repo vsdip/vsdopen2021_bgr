@@ -423,6 +423,172 @@ In this simulation we should get the reference voltgae as an umbrella shaped cur
   <img src="Images/prelayout/ideal_bgr.png">
 </p>
 
+#### 3.4.5 BGR with SBCM
+
+Now we will replace the ideal Op-Amp with self-biased current mirror which is our proposed design. We expect same type of output as in case of ideal OpAmp based BGR. We will also check for different corners, and will see how our circuit is performing in different corners.
+
+- Behaviour in TT corner [netlsit](/prelayout/bgr_lvt_rpolyh_3p40.sp)
+<p align="center">
+  <img src="Images/prelayout/bgr_tt.png">
+</p>
+
+Tempco. Of Vref = ~21.7 PPM
+
+- Behaviour in FF corner [netlist](/prelayout/bgr_lvt_rpolyh_3p40_ff.sp)
+<p align="center">
+  <img src="Images/prelayout/bgr_ff.png">
+</p>
+
+Tempco. Of Vref = ~10 PPM
+
+- Behaviour in SS corner [netlist](/prelayout/bgr_lvt_rpolyh_3p40_ss.sp)
+<p align="center">
+  <img src="Images/prelayout/bgr_ss.png">
+</p>
+
+Tempco. Of Vref = ~45 PPM
+
+## 4. Layout Design
+
+Now after getting our final netlist, we have to design the layout for our BGR. Layout is drawning the masks used in fabrication. We are going to use the Magic VLSI tool for our layout design.
+
+### 4.1 Getting started with Magic
+
+Magic is an open source VLSI layout editor tool. To launch magic open terminal and write the following command.
+```
+$ magic -T /home/<path for sky130A.tech>/sky130A.tech 
+```
+
+Now it will open up two windows, those are `tkcon.tcl` and `toplevel`. Now let's discuss some basic magic tool operations.
+```
+g : grid on/off
+z : zoom in
+Shift + z : zoom out
+
+Draw a box : 
+  1. Left click + Right click of the mouse : pointer will be at a grid point
+  2. Right click : a blank box will be created from the pointed point to the point where right click occured
+ 
+Fill a box with a layer:
+  1. Draw a box
+  2. Select a layer from the tool manager
+  3. Middle click the mouse button
+  
+  or 
+  
+  1. Draw a box
+  2. Write "paint <layer name>" in the tkcon.tcl window
+
+
+Delete a layer:
+  1. Draw a box where you want to delete a layer
+  2. Write "erase <layer name>" in the tkcon.tcl window
+ 
+Delete an area:
+  1. Draw a box where you want to delete an area
+  2. Press 'a'
+  3. Press 'd'
+
+u : undo
+r : rotate
+m : move
+c : copy
+```
+Now device wise we have the following devices in our circuit.
+- PFETS
+- NFETS
+- Resistor Bank
+- BJTs
+
+Now in order to design faster we should follow the hierarchical design manner. i.e we will design one cell then we will instance that to another level and do placement and routing.
+
+In our design we have 3 hierarchies. Those are 
+
+1. Hierarchy-1 (Basic Cells) : NFET, PFET, BJT, Resistor
+2. Hierarchy-2 (Blocks of similar cells): NFETS, PFETS, PNP10, RESBANK, STARTERNFET
+3. Hierarchy-3 (Top Level): TOP
+
+Now let's start with all leaf cell designs.
+### 4.2 Basic Cell Design
+
+#### 4.2.1 Design of NFET
+In our circuit we are using LVT type NFETs. So we have to draw all the valid layers for the lvt nfet as per our desired sizes.
+
+In our design we have used two different size nfets:
+
+1. W=5 L=1 [mag file](/layout/nfet.mag)
+
+<p align="center">
+  <img src="Images/layout/nfet.png">
+</p>
+
+2. W=1 L=7 [mag file](/layout/nfet1.mag)
+
+<p align="center">
+  <img src="Images/layout/nfet1.png">
+</p>
+
+#### 4.2.2 Design of PFET
+In our circuit we are using LVT type PFETs. So we have to draw our PFET using all valid layers for lvt pfet. In our design we have one size pfet i.e W=5 L=2 [mag file](/layout/pfet.mag)
+
+<p align="center">
+  <img src="Images/layout/pfet.png">
+</p>
+
+#### 4.2.3 Design of Resistor
+In our desing we are using poly resistors of W=1.41 and L=7.8. So we have to create the magic file choosing the appropriate layers for the Resistor. [mag file](/layout/res1p41.mag)
+
+<p align="center">
+  <img src="Images/layout/res1p41.png">
+</p>
+
+#### 4.2.4 Dessing of PNP (BJT)
+In our design we are using PNP having emitter 3.41 * 3.41 uM.So we can use the valid layers to design our PNP. [mag file](/layout/pnpt1.mag)
+
+<p align="center">
+  <img src="Images/layout/pnpt1.png">
+</p>
+
+### 4.3 Blocks Design
+
+#### 4.3.1 Design of NFETs
+We have created a layout by putting all the nfets in one region. We have placed the nfets in such a way that it follows common centroid matching. Also used some dummies to avoid Diffusion break and for better matching and noise protection. Also added one guard ring for enhance performance. [mag file](/layout/nfets.mag)
+
+<p align="center">
+  <img src="Images/layout/nets.png">
+</p>
+
+#### 4.3.2 Design of PFETs
+We have created a PFETs block by putting all the pfets together, with matching arrangement, also added the guardring. [mag file](/layout/pfets.mag)
+
+<p align="center">
+  <img src="Images/layout/pfets.png">
+</p>
+
+#### 4.3.3 Design of RESBANK
+We have cretaed the layout of the RESBANK by putting all resistors together, with proper matching arrangemment and soe extra dummies and a guardring. [mag file](/layout/resbank.mag)
+<p align="center">
+  <img src="Images/layout/resbank.png">
+</p>
+
+#### 4.3.4 Design of PNP10
+We have created the layout by putting all the PNPs together, with appropriate matching, and used dummies to enhance noise performance. [mag file](/layout/pnp10.mag)
+<p align="center">
+  <img src="Images/layout/pnp10.png">
+</p>
+
+#### 4.3.5 Design of STARTERNFET
+We placed the the two w=1, l=7 NFETs together with a guardring to desingn the STATRTERNFET. [mag file](/layout/starternfet.mag)
+<p align="center">
+  <img src="Images/layout/starternfet.png">
+</p>
+
+## 4.4 Top level design
+To obtain the top level design, we have placed all the blocks together, routed it. [mag file](/layout/top.mag)
+<p align="center">
+  <img src="Images/layout/top.png">
+</p>
+
 
 
 ## Author
