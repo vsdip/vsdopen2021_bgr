@@ -358,12 +358,39 @@ After simulation we can get a wavefrom like below, and from the wavefrom we can 
 
 **CTAT Voltage generation with Multiple BJT** [netlist](/prelayout/ctat_voltage_gen_mul_bjt.sp)
 
-**CTAT Voltage generation with different current source values**
+In this simulation we will check the CTAT voltage across the 8 parallel connected BJTs.
+<p align="center">
+  <img src="Images/prelayout/ctat_mul_bjt.png">
+</p>
 
+As we can see the slope is increasing in case of multiple BJTs.
 
+**CTAT Voltage generation with different current source values** [netlist](prelayout/ctat_voltage_gen_var_current.sp)
 
+In this simulation we will check the CTAT voltage dependancy on current.
+<p align="center">
+  <img src="Images/prelayout/ctat_cur.png">
+</p>
 
+We can find that the voltage is decreasing with decrease in current value.
 
+#### 3.4.2 PTAT Simulation
+
+**PTAT Voltage generation with ideal current source** [netlist](/prelayout/ptat_voltage_gen_ideal_current_source.sp)
+
+In this simulation we will take one ideal current source and will connect it to 5K Ohm resistance and 8 parallel BJTs. From this we will find the voltgae difference between the two terminals of the resistnce, which will give us a slightly PTAT voltage.
+<p align="center">
+  <img src="Images/prelayout/ptat_cir.png">
+</p>
+
+We can find that the voltage V(ra1)-V(qp2) is increasing with temp. which is the desired PTAT voltage.
+
+**PTAT Voltage generation with VCVS** [netist](/prelayout/ptat_voltage_gen.sp)
+
+In this simulation we will check the amplified PTAT voltage using one VCVS.
+<p align="center">
+  <img src="Images/prelayout/ptat_vcvs.png">
+</p>
 
 
 [Magic]:                http://opencircuitdesign.com/magic/
