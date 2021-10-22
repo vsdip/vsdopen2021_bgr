@@ -1,0 +1,26 @@
+magic
+tech sky130A
+timestamp 1634540125
+<< nmoslvt >>
+rect 0 0 100 500
+<< ndiff >>
+rect -30 490 0 500
+rect -30 10 -24 490
+rect -6 10 0 490
+rect -30 0 0 10
+rect 100 490 130 500
+rect 100 10 106 490
+rect 124 10 130 490
+rect 100 0 130 10
+<< ndiffc >>
+rect -24 10 -6 490
+rect 106 10 124 490
+<< poly >>
+rect 0 500 100 513
+rect 0 -13 100 0
+<< locali >>
+rect -24 490 -6 500
+rect -24 0 -6 10
+rect 106 490 124 500
+rect 106 0 124 10
+<< end >>

@@ -1,0 +1,178 @@
+magic
+tech sky130A
+timestamp 1634562067
+<< pwell >>
+rect 3215 49 3226 643
+<< psubdiff >>
+rect 3215 49 3226 643
+<< locali >>
+rect 3230 1251 3871 1300
+rect -587 705 3871 1251
+rect -587 -681 -41 705
+rect 8 539 3228 656
+rect 8 130 126 539
+rect 534 130 770 539
+rect 1178 130 1414 539
+rect 1822 130 2058 539
+rect 2467 130 2702 539
+rect 3111 130 3228 539
+rect 8 -106 3228 130
+rect 8 -514 126 -106
+rect 534 -514 770 -106
+rect 1178 -514 1414 -106
+rect 1822 -514 2058 -106
+rect 2467 -514 2702 -106
+rect 3111 -514 3228 -106
+rect 8 -632 3228 -514
+rect 3230 -681 3871 705
+rect -587 -1227 3871 -681
+rect 3230 -1276 3871 -1227
+<< metal1 >>
+rect 801 656 2435 710
+rect 801 507 1147 656
+rect 157 161 1147 507
+rect 2089 507 2435 656
+rect 157 -137 503 161
+rect 801 -137 1147 161
+rect 157 -483 1147 -137
+rect 2089 161 3079 507
+rect 2089 -137 2435 161
+rect 2733 -137 3079 161
+rect 801 -632 1147 -483
+rect 2089 -483 3079 -137
+rect 2089 -632 2435 -483
+rect 801 -686 2435 -632
+<< via1 >>
+rect 1475 191 1762 478
+rect 1475 -453 1762 -166
+<< metal2 >>
+rect 1466 478 1770 486
+rect 1466 191 1475 478
+rect 1762 191 1770 478
+rect 1466 182 1770 191
+rect 1466 -166 1770 -158
+rect 1466 -453 1475 -166
+rect 1762 -453 1770 -166
+rect 1466 -462 1770 -453
+use pnpt1  pnpt1_20
+timestamp 1633157399
+transform 1 0 3215 0 1 643
+box 0 0 670 670
+use pnpt1  pnpt1_19
+timestamp 1633157399
+transform 1 0 2571 0 1 643
+box 0 0 670 670
+use pnpt1  pnpt1_18
+timestamp 1633157399
+transform 1 0 1927 0 1 643
+box 0 0 670 670
+use pnpt1  pnpt1_17
+timestamp 1633157399
+transform 1 0 1283 0 1 643
+box 0 0 670 670
+use pnpt1  pnpt1_16
+timestamp 1633157399
+transform 1 0 639 0 1 643
+box 0 0 670 670
+use pnpt1  pnpt1_15
+timestamp 1633157399
+transform 1 0 -5 0 1 643
+box 0 0 670 670
+use pnpt1  pnpt1_27
+timestamp 1633157399
+transform 1 0 -649 0 1 643
+box 0 0 670 670
+use pnpt1  pnpt1_21
+timestamp 1633157399
+transform 1 0 3215 0 1 -1
+box 0 0 670 670
+use pnpt1  pnpt1_4
+timestamp 1633157399
+transform 1 0 2571 0 1 -1
+box 0 0 670 670
+use pnpt1  pnpt1_3
+timestamp 1633157399
+transform 1 0 1927 0 1 -1
+box 0 0 670 670
+use pnpt1  pnpt1_2
+timestamp 1633157399
+transform 1 0 1283 0 1 -1
+box 0 0 670 670
+use pnpt1  pnpt1_1
+timestamp 1633157399
+transform 1 0 639 0 1 -1
+box 0 0 670 670
+use pnpt1  pnpt1_0
+timestamp 1633157399
+transform 1 0 -5 0 1 -1
+box 0 0 670 670
+use pnpt1  pnpt1_26
+timestamp 1633157399
+transform 1 0 -649 0 1 -1
+box 0 0 670 670
+use pnpt1  pnpt1_22
+timestamp 1633157399
+transform 1 0 3215 0 1 -645
+box 0 0 670 670
+use pnpt1  pnpt1_23
+timestamp 1633157399
+transform 1 0 3215 0 1 -1289
+box 0 0 670 670
+use pnpt1  pnpt1_9
+timestamp 1633157399
+transform 1 0 2571 0 1 -645
+box 0 0 670 670
+use pnpt1  pnpt1_14
+timestamp 1633157399
+transform 1 0 2571 0 1 -1289
+box 0 0 670 670
+use pnpt1  pnpt1_8
+timestamp 1633157399
+transform 1 0 1927 0 1 -645
+box 0 0 670 670
+use pnpt1  pnpt1_13
+timestamp 1633157399
+transform 1 0 1927 0 1 -1289
+box 0 0 670 670
+use pnpt1  pnpt1_7
+timestamp 1633157399
+transform 1 0 1283 0 1 -645
+box 0 0 670 670
+use pnpt1  pnpt1_12
+timestamp 1633157399
+transform 1 0 1283 0 1 -1289
+box 0 0 670 670
+use pnpt1  pnpt1_6
+timestamp 1633157399
+transform 1 0 639 0 1 -645
+box 0 0 670 670
+use pnpt1  pnpt1_11
+timestamp 1633157399
+transform 1 0 639 0 1 -1289
+box 0 0 670 670
+use pnpt1  pnpt1_5
+timestamp 1633157399
+transform 1 0 -5 0 1 -645
+box 0 0 670 670
+use pnpt1  pnpt1_25
+timestamp 1633157399
+transform 1 0 -649 0 1 -645
+box 0 0 670 670
+use pnpt1  pnpt1_10
+timestamp 1633157399
+transform 1 0 -5 0 1 -1289
+box 0 0 670 670
+use pnpt1  pnpt1_24
+timestamp 1633157399
+transform 1 0 -649 0 1 -1289
+box 0 0 670 670
+<< labels >>
+rlabel metal2 1634 486 1634 486 1 vq1
+port 1 n
+rlabel metal1 1729 710 1729 710 5 vq2
+port 2 s
+rlabel metal2 1567 -462 1567 -462 1 vq3
+port 3 n
+rlabel locali 8 18 8 18 1 gnd
+port 4 n
+<< end >>
