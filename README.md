@@ -425,6 +425,9 @@ In this simulation we should get the reference voltgae as an umbrella shaped cur
 
 
 
+## Author
+
+Designed by [Subham Rath](https://in.linkedin.com/in/srath01) under the guidance of Prof. [Santunu Sarangi](https://in.linkedin.com/in/santunu-sarangi-b731305b) and Prof. [Saroj Rout](https://www.linkedin.com/in/sroutk/) in collaboration with [VSD](https://www.vlsisystemdesign.com/)
 [Magic]:                http://opencircuitdesign.com/magic/
 [Ngspice]:              http://ngspice.sourceforge.net
 [Netgen]:               http://opencircuitdesign.com/netgen/
