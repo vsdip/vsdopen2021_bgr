@@ -1,7 +1,7 @@
 **** bandgap reference circuit using self-biase current mirror *****
 
-.lib "/home/santunu/cad/eda-technology/sky130/models/spice/models/sky130.lib.spice tt"
-.include "/home/santunu/cad/eda-technology/sky130/models/spice/models/sky130_fd_pr__model__pnp.model.spice"
+.lib "/home/srath22/cad/eda-technology/sky130/models/spice/models/sky130.lib.spice tt"
+.include "/home/srath22/cad/eda-technology/sky130/models/spice/models/sky130_fd_pr__model__pnp.model.spice"
 
 .global vdd gnd
 .temp 27
