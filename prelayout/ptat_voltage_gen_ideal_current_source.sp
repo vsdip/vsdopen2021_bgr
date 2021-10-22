@@ -1,7 +1,7 @@
 **** ctat voltage generation circuit *****
 
-.lib "/home/santunu/cad/eda-technology/sky130/models/spice/models/sky130.lib.spice tt"
-.include "/home/santunu/cad/eda-technology/sky130/models/spice/models/sky130_fd_pr__model__pnp.model.spice"
+.lib "/home/srath22/cad/eda-technology/sky130/models/spice/models/sky130.lib.spice tt"
+.include "/home/srath22/cad/eda-technology/sky130/models/spice/models/sky130_fd_pr__model__pnp.model.spice"
 
 .global vdd gnd
 .temp 27
@@ -24,8 +24,7 @@ vsup	vdd	gnd	dc 	2
 *** control statement
 .control
 run
-plot v(qp1) v(ra1) v(qp2) v(out)
-plot vid1#branch vid2#branch
+plot v(ra1) v(qp2) v(ra1)-v(qp2)
 .endc
 .end
 
